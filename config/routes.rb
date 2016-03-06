@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
   	## give all access to new_file
-  	resources :new_files
+  	resources :new_files do
+    collection { post :import }
+  end
 
   	## respect to only these paths as public
   	match 'new_files' => 'new_files#index', via: [:get]

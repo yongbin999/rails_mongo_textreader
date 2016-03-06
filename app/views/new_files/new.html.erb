@@ -1,5 +1,17 @@
-<h1>New New File</h1>
+<h1>create new line by line</h1>
 
 <%= render 'form' %>
+
+
+
+<div>
+<h3>Or import a text File</h3>
+  <%= form_tag import_new_files_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import file" %>
+  <% end %>
+</div>
+
+
 
 <%= link_to 'Back', new_files_path %>
