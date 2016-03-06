@@ -2,8 +2,10 @@
 
 one:
   fileid: 1
-  line: 
+  line: 1
+  content: MyString
 
 two:
   fileid: 1
-  line: 
+  line: 1
+  content: MyString

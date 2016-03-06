@@ -24,17 +24,7 @@ class NewFilesController < ApplicationController
   # POST /new_files
   # POST /new_files.json
   def create
-    ## need to par into lines 
-    @phrase = params["new_file"]["line"]
-
-    puts @phrase
-    for i in 1..3
-
-      @new_file = NewFile.new({:fileid=> params["new_file"]["fileid"], "line"=> { i => @phrase} })
-      @new_file.save
-    end
-    
-    #@new_file = NewFile.new({"fileid"=> :fileid, "line"=> { 2 => :line} })
+    @new_file = NewFile.new(new_file_params)
 
     respond_to do |format|
       if @new_file.save
@@ -79,6 +69,6 @@ class NewFilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def new_file_params
-      params.require(:new_file).permit(:fileid, :line)
+      params.require(:new_file).permit(:fileid, :line, :content)
     end
 end

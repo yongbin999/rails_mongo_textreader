@@ -18,7 +18,7 @@ class NewFilesControllerTest < ActionController::TestCase
 
   test "should create new_file" do
     assert_difference('NewFile.count') do
-      post :create, new_file: { fileid: @new_file.fileid, line: @new_file.line }
+      post :create, new_file: { content: @new_file.content, fileid: @new_file.fileid, line: @new_file.line }
     end
 
     assert_redirected_to new_file_path(assigns(:new_file))
@@ -35,7 +35,7 @@ class NewFilesControllerTest < ActionController::TestCase
   end
 
   test "should update new_file" do
-    patch :update, id: @new_file, new_file: { fileid: @new_file.fileid, line: @new_file.line }
+    patch :update, id: @new_file, new_file: { content: @new_file.content, fileid: @new_file.fileid, line: @new_file.line }
     assert_redirected_to new_file_path(assigns(:new_file))
   end
 

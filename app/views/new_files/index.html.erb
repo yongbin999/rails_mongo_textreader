@@ -7,6 +7,7 @@
     <tr>
       <th>Fileid</th>
       <th>Line</th>
+      <th>Content</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= new_file.fileid %></td>
         <td><%= new_file.line %></td>
+        <td><%= new_file.content %></td>
         <td><%= link_to 'Show', new_file %></td>
         <td><%= link_to 'Edit', edit_new_file_path(new_file) %></td>
         <td><%= link_to 'Destroy', new_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
