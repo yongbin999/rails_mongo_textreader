@@ -2,17 +2,23 @@ class LinesController < ApplicationController
 	def index
 	end
 
+	# get the last file id in system, if exist try to get the line requested and return the string
 	def get
-		@line = params[:line]
-		@res_line = NewFile.where(:fileid => 1, :line => @line)[0]
-		
-		if @res_line		
-			#puts @res_line
-			@content = @res_line.content
-		    render text: @content, :status => :ok
-		else
-		    render :file => 'public/413.html', :status => :request_entity_too_large, :layout => false
-		end
+		line = params[:line]
+		lastid = NewFile.last.fileid
+		if lastid
+			@res_line = NewFile.where(:fileid => lastid, :line => line)[0]
+			if @res_line		
+				#puts @res_line
+				@content = @res_line.content
+			    render text: @content, :status => :ok
+			else
+			    render :file => 'public/413.html', :status => :request_entity_too_large, :layout => false
+			end
 
-	end
+		else
+			render :file => 'public/413.html', :status => :request_entity_too_large, :layout => false
+		end #end if
+		
+	end #end get
 end
