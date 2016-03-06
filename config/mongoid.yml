@@ -1,3 +1,4 @@
+
 development:
   # Configure available database clients. (required)
   clients:
@@ -5,11 +6,14 @@ development:
     default:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
-      database: mongoserver_development
+      ###database: mongoserver_development
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
-      hosts:
-        - localhost:27017
+      ###hosts:
+      ###  - localhost:27017
+      uri: mongodb://heroku_nrztng80:iono6f47litkkr0jgl27h2dubk@ds023418.mlab.com:23418/heroku_nrztng80
+
+
       options:
         # Change the default write concern. (default = { w: 1 })
         # write:
