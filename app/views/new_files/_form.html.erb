@@ -11,19 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :fileid %><br>
-    <%= f.number_field :fileid %>
-  </div>
-  <div class="field">
-    <%= f.label :line %><br>
-    <%= f.number_field :line %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+        <table>
+          <tr>
+            <div class="field">
+              <td><%= f.label :fileid %>: </td>
+              <td><%= f.hidden_field :fileid, :value => 1 %>1</td>
+            </div>
+          </tr>
+          <tr>
+            <div class="field">
+              <td><%= f.label :line %># </td>
+              <td><%= f.number_field :line %></td>
+            </div>
+          <tr>
+          </tr>
+            <div class="field">
+              <td><%= f.label :content %> </td>
+              <td><%= f.text_field :content %></td>
+            </div>
+          </tr>
+          </table>
+          <br>
+            <div class="actions">
+              <td><%= f.submit %></td>
+            </div>
 <% end %>

@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   end
 
   	## respect to only these paths as public
-  	match 'new_files' => 'new_files#index', via: [:get]
-  	match 'new_files/new' => 'new_files#new', via: [:get]
-  	match 'new_files/create' => 'new_files#create', via: [:post]
-  	match 'new_files/show' => 'new_files#show', via: [:get]
+  	match 'new_file' => 'new_files#index', via: [:get]
+  	match 'new_file/new' => 'new_files#new', via: [:get]
+  	match 'new_file/create' => 'new_files#create', via: [:post]
+  	match 'new_file/show' => 'new_files#show', via: [:get]
 
   	match 'lines/:line' => 'lines#get', via: [:get]
 

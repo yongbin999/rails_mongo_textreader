@@ -5,7 +5,10 @@ class LinesController < ApplicationController
 	# get the last file id in system, if exist try to get the line requested and return the string
 	def get
 		line = params[:line]
-		lastid = NewFile.last.fileid
+		## this can be slow, can use a counter instead
+		##lastid = NewFile.all.sort({"fileid" => -1}).limit(1).first().fileid
+		lastid = 1
+
 		if lastid
 			@res_line = NewFile.where(:fileid => lastid, :line => line)[0]
 			if @res_line		
