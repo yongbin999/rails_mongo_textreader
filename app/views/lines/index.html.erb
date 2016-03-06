@@ -10,8 +10,8 @@
 			    <th>path</th> 
 			  	</tr>
 			  <tr>
-			    <td>load new file to view</td>
-			    <td><div id="dev_links"><%= link_to '/lines/newfile/', "/lines/newfile/" %></div></td> 
+			    <td>load new file to view - (to be change to file uploader)   </td>
+			    <td><div id="dev_links"><%= link_to '/new_files/new/', "/new_files/new/" %></div></td> 
 			  </tr>			  
 			  <tr>
 			    <td>status 200 link</td> 
@@ -33,7 +33,10 @@
 				  <li><div id="status_done">finished: init of server </div></li>
 				  <li><div id="status_done">finished: add landing-page and frontend </div></li>
 				  <li><div id="status_done">finished: add get request param capture </div></li>
-				  <li><div id="status_work">currently: setting up the db and query </div></li>
+				  <li><div id="status_work">finished: set up mongodb schema and query </div></li>
+				  <li><div id="status_work">finished: status code returns </div></li>
+				  <li><div id="status_work">currently: setup live mongo, validation, trigger destory-old on new file</div></li>
+				  <li><div id="status_work">currently: a file uploader, and then parser into mongo query </div></li>
 				  <li><div id="status_issues">todo: figure out concurrency with unicorn/puma</div></li>
 				  <li><div id="status_issues">todo:  figure out volume with caching/dynos </div></li>
 				  <li><div id="status_issues">todo:  complete the final report analysis</div></li>

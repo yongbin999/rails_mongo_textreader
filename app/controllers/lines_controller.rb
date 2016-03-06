@@ -16,7 +16,7 @@ class LinesController < ApplicationController
 		@new_files = NewFile.where(:fileid => 1, :line => @line )
 		
 		if @new_files.length != 0
-		      render json: @new_files
+		      render json: @new_files , :status => :ok
 		    else
 		      render :file => 'public/413.html', :status => :request_entity_too_large, :layout => false
 		end
