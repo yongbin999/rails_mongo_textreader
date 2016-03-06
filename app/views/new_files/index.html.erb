@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing New Files</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fileid</th>
+      <th>Line</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @new_files.each do |new_file| %>
+      <tr>
+        <td><%= new_file.fileid %></td>
+        <td><%= new_file.line %></td>
+        <td><%= link_to 'Show', new_file %></td>
+        <td><%= link_to 'Edit', edit_new_file_path(new_file) %></td>
+        <td><%= link_to 'Destroy', new_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New New file', new_new_file_path %>

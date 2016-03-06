@@ -1,6 +1,6 @@
 class LinesController < ApplicationController
 	def index
-	end	
+	end
 	def newfile
 		@file = 1
 			if request.xhr?
@@ -12,6 +12,8 @@ class LinesController < ApplicationController
 		    end
 	end
 	def get
-		 render plain: params[:line].inspect
+		@line = params[:line]
+		@new_files = NewFile.where(:fileid => 1, :line => @line )
+		 render plain: @new_files.inspect
 	end
 end

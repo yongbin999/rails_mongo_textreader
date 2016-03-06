@@ -1,0 +1,2 @@
+module NewFilesHelper
+end

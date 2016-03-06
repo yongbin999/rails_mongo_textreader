@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fileid:</strong>
+  <%= @new_file.fileid %>
+</p>
+
+<p>
+  <strong>Line:</strong>
+  <%= @new_file.line %>
+</p>
+
+<%= link_to 'Edit', edit_new_file_path(@new_file) %> |
+<%= link_to 'Back', new_files_path %>

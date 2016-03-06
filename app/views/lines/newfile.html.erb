@@ -2,3 +2,8 @@
 <h3>size limit: ...</h3>
 
 current file id: <%= @file %>
+
+<%= form_for NewFile.create do |f| -%>
+
+<%= f.submit "add action" %>
+<% end %>
