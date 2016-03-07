@@ -1,28 +1,11 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+** initial
+since we can preprocess data, if the file is samll usually we can read it from the memory, but when it get too big, we should put it in a distrubuted database, nosql would be useful if we dont know the var len of the lines.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+-- encounter some inssue with gem install on my new machine, was missing some lib dependency.
+
+
+
+in the future scale able to read from specific uploaded fileid
+
+
