@@ -1,18 +1,20 @@
+Live server: http://lineserver.herokuapp.com/
 ## Usage:
 If you dont have rails/ruby/mongo install  and you are in linux lubuntu, you can run:
-sh build.sh
-else youalready have everythin install and just need the lib dependency run:
-bundle install
+ sh build.sh
 
-to run the app:
-through regular single process rails:
-rails server
-or run unicorn multi proceess:
-sh run.sh
+ else youalready have everythin install and just need the lib dependency run:
+ bundle install
+
+ to run the app:
+ through regular single process rails:
+ rails server
+ or run with unicorn multi proceess:
+ sh run.sh
 
 ## Describtion on this project:
 
-### How does your system work? (if not addressed in comments in source)
+### How does your system work?
 I used Ruby on Rails MVC framework for this project.  First, I used scaffold to generate CRUD of input_file. Then I added routes and controllers to handle request to display the lines by id. I also included an upload file functionality, the algorithm parse and loads the text into mongo db. The reason to use a db is to improve lookup performance, without reading the entire file every time to search for a line. My db includes an index on the line, which help lookup performance since its read only. 
 
 ### How will your system perform with a 1 GB file? a 10 GB file? a 100 GB file?
@@ -27,10 +29,13 @@ According to Amdahl’s Law from my class, “max speed up” = 1/ ( ( 1-a/P) +a
 ### What documentation, websites, papers, etc did you consult in doing this assignment?
 concurrency with unicorn
 https://devcenter.heroku.com/articles/rails-unicorn
+
 creating indexes with mongoid
 https://mongoid.github.io/en/mongoid/docs/indexing.html
+
 creating the upload file input:
 https://richonrails.com/articles/importing-csv-files
+
 configure paid dynos  currurency:
 https://medium.com/swlh/running-a-high-traffic-rails-app-on-heroku-s-performance-dynos-d9e6833d34c4#.uvgnh2iq6
 
@@ -42,17 +47,25 @@ I used Heroku platform to deploy my app, works well with rails, direct link to g
 
 ### How long did you spend on this exercise? If you had unlimited more time to spend on this, how would you spend it and how would you prioritize each item?
 I spent few hours to setup the new version of rails/ruby/mongo, while researching gems and planning different implementations. To get the app onto live server and have functioning req/res took about half the day. Then debugging, research on stackoverflow / rails tutorials took another few hours. Improving the app with lib to handle concurrency and volume took a few hours. Lastly, I spent a few more hours on code reviews and final analysis report.
+
 Total time I spent is roughly 20 hours. 
+
 If I have unlimited time, I would first outline what functionalities I want to complete, then prioritize by getting the core function working first, then try to add custom functionality. 
 
 
 ###If you were to critique your code, what would you have to say about it?
 
 Need unit tests, performance testing. Git pull request control.
-Issue that can destroy the system could be ddos attacks, or code injections from the upload file.
+
+Issue that can destroy the system could be ddos attacks, or code 
+injections from the upload file.
+
 add security session if the data is sensitive. 
+
 For the frontend, it would be cool to use angular to display text as user pick the line
+
 Dev db is hooked up to live server
+
 Instead of destroying the prev file before loading the new one. I would schedule the delete when server has downtime.
 
 
