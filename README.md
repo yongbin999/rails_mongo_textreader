@@ -31,7 +31,7 @@ Unicorn fork multi process with 2-4 workers into available server ram. With prel
 
 According to Amdahl’s Law from my class, “max speed up” = 1/ ( ( 1-a/P) +a) , where a is the % synchronized codes, and P is number of process. Since we have read-only, so a = 0. We get 1/ (1/P) = P. The concurrency speedup should be close to linear.
 
-I havent done perfromance testing, so I don't know how it world scales up. Base on my network response on individual lines, it took ~100ms per request. Based on this info, I estimate it can handle 10 request per second time, times 4 workers, equal to about 50 request per second. 
+I havent done perfromance testing, so I don't know how it world scales up. Base on my network response on individual lines, it took ~100ms per request. Based on this info, I estimate it can handle 10 request per second time, times 4 workers, equal to about 50 request per second. Therefore, I updated my mongoid config pool-size from default 5 to 50.
 
 ### What documentation, websites, papers, etc did you consult in doing this assignment?
 * concurrency with unicorn

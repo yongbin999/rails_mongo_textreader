@@ -15,6 +15,7 @@ production:
 
       options:
        connect_timeout: 10
+       pool_size: 80
 
 development:
   # Configure available database clients. (required)
