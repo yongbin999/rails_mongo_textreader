@@ -13,6 +13,7 @@ through regular single process rails:
 or run with unicorn multi proceess:
  * sh run.sh
 
+<hr>
 ## Describtion on this project:
 
 ### How does your system work?
@@ -29,6 +30,8 @@ I used standard implementation with indexing, so it should run O(logn).
 Unicorn fork multi process with 2-4 workers into available server ram. With preload on, it will start up faster for copies of the process. Heroku also has options to increase number of dynos at a price to match the worker needs. In my app at the free tier, if there are too many users then the request will start queuing up, and at certain point start to time out. 
 
 According to Amdahl’s Law from my class, “max speed up” = 1/ ( ( 1-a/P) +a) , where a is the % synchronized codes, and P is number of process. Since we have read-only, so a = 0. We get 1/ (1/P) = P. The concurrency speedup should be close to linear.
+
+I havent done perfromance testing, so I don't know how it world scales up. Base on my network response on individual lines, it took ~100ms per request. Based on this info, I estimate it can handle 10 request per second time, times 4 workers, equal to about 50 request per second. 
 
 ### What documentation, websites, papers, etc did you consult in doing this assignment?
 * concurrency with unicorn
