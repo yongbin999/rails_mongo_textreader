@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class='main'>
     <div class='activator'>
-        <div class="shrink done"><h1>Hello, lines viewer!</h1></div>
+        <div class="shrink done"><h1>Hello, lines-viewer! Current # of lines: <%= @maxline%></h1></div>
         <div class="expanded">
 
 		  	<table>
@@ -19,11 +19,11 @@
 			  </tr>			  
 			  <tr>
 			    <td>status 200 link</td> 
-			    <td><div id="dev_links"><%= link_to '/lines/2', "/lines/2" %></div></td> 
+			    <td><div id="dev_links"><%= link_to '/lines/40000', "/lines/40000" %></div></td> 
 			  </tr>			  
 			  <tr>
 			    <td>status 413 link</td>
-			    <td><div id="dev_links"><%= link_to '/lines/200', "/lines/200" %></div></td> 
+			    <td><div id="dev_links"><%= link_to '/lines/200', "/lines/200000" %></div></td> 
 			  </tr>
       		</table>
 
@@ -42,14 +42,12 @@
 				  <li><div id="status_done">finished: setup live mongo </div></li>
 				  <li><div id="status_done">finished: a file uploader, and then parser into mongo table </div></li>
 				  <li><div id="status_done">finished: trigger destory_all on new file</div></li>
-				  <li><div id="status_work">currently: validation?</div></li>
-				  <li><div id="status_work">currently: check valid: The line is valid ASCII (e.g. not Unicode).</div></li>
-				  
-				  <li><div id="status_issues">todo: figure out concurrency with unicorn/puma</div></li>
+				  <li><div id="status_done">finished: concurrency with unicorn in procfile</div></li>
 				  <li><div id="status_issues">todo:  figure out volume with caching/dynos </div></li>
 				  <li><div id="status_issues">todo:  complete the final report analysis</div></li>
 
 
+				  <li><div id="status_issues">futures: validation?</div></li>
 				  <li><div id="status_issues">futures:  write tests</div></li>
 				</ul>
       			
@@ -63,5 +61,15 @@
 				<br> 	Storage 496 mb, single instance?
 				<br> 	https://elements.heroku.com/addons/mongolab
 			</p>
+
+
+			<hr>
+			<footer>
+			<p>
+				Proj by:<author> Yong Liang</author>
+				<br>Git repo: <a href="https://github.com/yongbin999">https://github.com/yongbin999 - not public on gihub yet</a>
+				<br>My projs blog: <a href="https://yongbin999.wordpress.com/">https://yongbin999.wordpress.com/</a>
+			</p>
+			</footer>
 
 </div>

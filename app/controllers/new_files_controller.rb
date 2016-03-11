@@ -4,7 +4,7 @@ class NewFilesController < ApplicationController
   # GET /new_files
   # GET /new_files.json
   def index
-    @new_files = NewFile.all.limit(100)
+    @new_files = NewFile.limit(100)
   end
 
   # GET /new_files/1
@@ -64,7 +64,8 @@ class NewFilesController < ApplicationController
 
   # remove all old files and add new one
    def import
-    NewFile.all.destroy_all
+    NewFile.delete_all
+    
     NewFile.import(params[:file])
     redirect_to root_url, notice: "File imported."
   end

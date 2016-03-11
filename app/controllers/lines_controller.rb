@@ -1,5 +1,6 @@
 class LinesController < ApplicationController
 	def index
+		@maxline = NewFile.count
 	end
 
 	# get the last file id in system, if exist try to get the line requested and return the string

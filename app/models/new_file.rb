@@ -4,6 +4,8 @@ class NewFile
   field :line, type: Integer
   field :content, type: String
 
+  index :line, :unique => true
+
   #parser on file and create into db by line
   def self.import(file)
 	curfileid = 1
