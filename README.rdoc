@@ -5,6 +5,8 @@ since we can preprocess data, if the file is samll usually we can read it from t
 -- encounter some inssue with gem install on my new machine, was missing some lib dependency.
 
 
+i try to load 3mb text file and response timeout after 30 seconds. While its processing, server will be  down, and the parsing will keep running until its done...
+
 
 in the future scale able to read from specific uploaded fileid
 

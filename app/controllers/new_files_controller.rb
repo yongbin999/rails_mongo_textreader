@@ -4,7 +4,7 @@ class NewFilesController < ApplicationController
   # GET /new_files
   # GET /new_files.json
   def index
-    @new_files = NewFile.all
+    @new_files = NewFile.all.limit(100)
   end
 
   # GET /new_files/1
