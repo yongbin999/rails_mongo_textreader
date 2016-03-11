@@ -3,13 +3,14 @@ Live server: http://lineserver.herokuapp.com/
 If you dont have rails/ruby/mongo install  and you are in linux lubuntu, you can run:
  * sh build.sh
 
- else youalready have everythin install and just need the lib dependency run:
+else youalready have everythin install and just need the lib dependency run:
  * bundle install
 
- to run the app:
- through regular single process rails:
+To run the app:
+through regular single process rails:
  * rails server
- or run with unicorn multi proceess:
+ 
+or run with unicorn multi proceess:
  * sh run.sh
 
 ## Describtion on this project:
