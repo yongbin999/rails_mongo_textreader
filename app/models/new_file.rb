@@ -4,7 +4,7 @@ class NewFile
   field :line, type: Integer
   field :content, type: String
 
-  index :line, :unique => true
+   index({ line: 1 }, { unique: true, name: "line_index" })
 
   #parser on file and create into db by line
   def self.import(file)
