@@ -16,7 +16,7 @@ sh run.sh
 I used Ruby on Rails MVC framework for this project.  First, I used scaffold to generate CRUD of input_file. Then I added routes and controllers to handle request to display the lines by id. I also included an upload file functionality, the algorithm parse and loads the text into mongo db. The reason to use a db is to improve lookup performance, without reading the entire file every time to search for a line. My db includes an index on the line, which help lookup performance since its read only. 
 
 *** How will your system perform with a 1 GB file? a 10 GB file? a 100 GB file?
- MY program will delete the existing file before uploading. There will be a onetime cost of O(nx) delete the old file and a onetime cost of O(n) to parse and load the new file into the db. Mongo has the ablity to distribute the db when the size it too large. 
+MY program will delete the existing file before uploading. There will be a onetime cost of O(nx) delete the old file and a onetime cost of O(n) to parse and load the new file into the db. Mongo has the ablity to distribute the db when the size it too large. 
 Since the “line” lookup is determined by the db implementation, without indexing the search can take O(n) to scan through all lines. With default b-tree indexing, it takes O(logn). A faster way is to use hash indexing O(1), but performs not as good when the request is a range of lines. 
 I used standard implementation with indexing, so it should run O(logn).
 
