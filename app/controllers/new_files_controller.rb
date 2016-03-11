@@ -64,8 +64,8 @@ class NewFilesController < ApplicationController
 
   # remove all old files and add new one
    def import
-    NewFile.delete_all
-    
+    NewFile.destroy_all
+
     NewFile.import(params[:file])
     redirect_to root_url, notice: "File imported."
   end
